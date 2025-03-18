@@ -14,15 +14,16 @@ PricePulse is a Python library for retail price optimization using Bayesian regr
 
 This software provides a comprehensive solution for analyzing and visualizing self-price elasticity and cross-price elasticity across a hierarchical product structure (Categories → Brands → SKUs). It is designed to help businesses understand how price changes impact demand at different levels of their product hierarchy and across various lifecycle stages.
 
+- Visualize Product Hierarchy
 ![alt text](109D0BF1-6590-4D46-8F42-E4C4DEE6E78D.jpeg)
 
-Visualize price elasticity across SKUs:
+- Visualize price elasticity across SKUs and product lifecycle (New Product Introduction (NPI), Mature, and End-of-Life (EOL) stages):
 ![alt text](0FB52DFC-BBE3-41E0-A2C7-B8C2763C7335.jpeg)
 
-Visualize price elasticity across Categories:
+- Visualize price elasticity across Categories and product lifecycle (New Product Introduction (NPI), Mature, and End-of-Life (EOL) stages):
 ![alt text](3C8722F8-6901-4BA7-BE95-B8FC8B5184D4.jpeg)
 
-Visualize price elasticity across Brands:
+- Visualize price elasticity across Brands and product lifecycle (New Product Introduction (NPI), Mature, and End-of-Life (EOL) stages):
 ![alt text](C3A5F0BF-B6D3-481D-9A0C-938EAE63C95F.jpeg)
 
 
@@ -108,7 +109,9 @@ jupyter notebook
 
 ## 📌 Usage (Refer to Jupyter_Script_for_Analysts.ipynb)
 
-Step 1: Generate Synthetic Data
+Step 1: Generate Synthetic Data For Testing Purposes
+- Designed to simulate real world proprietary data and retail business scenario
+- Generates synthetic data to simulate product lifecycle effect on demand, simulates historical marketing efforts, competitor price,item seasonality and item trend 
 ```python
 df = generate_dummy_data(
     n_categories=3,
@@ -119,7 +122,7 @@ df = generate_dummy_data(
 )
 ```
 
-Step 2: Visualize Hierarchy
+Step 2: Visualize Product Hierarchy
 ```python
 dot = plot_hierarchical_chart(n_categories=3, n_brands_per_category=2, n_skus_per_brand=3)
 dot
@@ -134,9 +137,15 @@ self_elasticities = results['self_elasticities']
 cross_elasticities = results['cross_elasticities']
 ```
 
-Step 4: Visualize Price-Demand Relationships
+Step 4: Visualize Price-Demand Relationships across a hierarchical product structure and product lifecycle ( New Product Introduction (NPI), Mature, and End-of-Life (EOL) stages )
 
 ```python
-visualize_demand_projections(results['price_demand_curves'], level='category', item_id=0)
+visualize_demand_projections(results['price_demand_curves'], level='brand', item_id=0)
 ```
-![alt text](0FB52DFC-BBE3-41E0-A2C7-B8C2763C7335.jpeg)
+![alt text](C3A5F0BF-B6D3-481D-9A0C-938EAE63C95F.jpeg)
+
+Step 5: Quadratic optimization for optimal pricing
+
+```sh
+To be launched soon
+```
