@@ -94,6 +94,12 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
+## Need Help with Installation?  
+
+If you have any questions or need assistance with the installation, feel free to reach out:  
+
+📧 **Email:** [jenarajesh.nitt@gmail.com](mailto:jenarajesh.nitt@gmail.com)  
+
 ---
 
 ## 📌 Usage (Refer to Jupyter_Script_for_Analysts.ipynb)
