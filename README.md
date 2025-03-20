@@ -80,28 +80,17 @@ Step 1: Clone this repository to your local machine and navigate to the project 
 
 ```sh
 git init
-git clone git@github.com:rajesh04jena/Dynamic_Price_Optimization_AutoML.git
-cd Dynamic_Price_Optimization_AutoML
+git clone git@github.com:rajesh04jena/PricePulse.git
+cd PricePulse
 ```
 
 Step 2: Create a conda environment(price-pulse-test-env), install dependencies and launch IDE
 
-Alternative 1(execute command in terminal sequentially)
-
 ```sh
-conda create -n price-pulse-test-env
+conda create -n price-pulse-test-env python
 conda activate price-pulse-test-env
 brew install graphviz
 pip install -r requirements.txt
-jupyter notebook
-```
-
-Alternative 2(execute command in terminal sequentially)
-
-```sh
-conda env create -f environment.yml
-conda activate price-pulse-test-env
-brew install graphviz
 jupyter notebook
 ```
 
