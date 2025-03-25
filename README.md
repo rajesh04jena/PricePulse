@@ -15,7 +15,7 @@ PricePulse is a Python library for retail price optimization using Bayesian regr
 This software provides a comprehensive solution for analyzing and visualizing self-price elasticity and cross-price elasticity across a hierarchical product structure (Categories → Brands → SKUs). It is designed to help businesses understand how price changes impact demand at different levels of their product hierarchy and across various lifecycle stages.
 
 - Visualize Product Hierarchy
-![alt text](109D0BF1-6590-4D46-8F42-E4C4DEE6E78D.jpeg)
+![alt text](product_hierarchy-1.png)
 
 - Visualize price elasticity across SKUs and product lifecycle (New Product Introduction (NPI), Mature, and End-of-Life (EOL) stages):
 ![alt text](0FB52DFC-BBE3-41E0-A2C7-B8C2763C7335.jpeg)
@@ -119,10 +119,14 @@ df = generate_dummy_data(
 
 Step 2: Visualize Product Hierarchy
 ```python
-dot = plot_hierarchical_chart(n_categories=3, n_brands_per_category=2, n_skus_per_brand=3)
-dot
+# Generate and display the chart
+chart = plot_hierarchical_chart(df)
+chart.render('product_hierarchy', format='png', cleanup=True)
+chart.render(filename='product_hierarchy', format='png', cleanup=True)
+chart
+
 ```
-![alt text](109D0BF1-6590-4D46-8F42-E4C4DEE6E78D.jpeg)
+![alt text](product_hierarchy-1.png)
 
 Step 3: Generate Self Price and Competitor Cross Price Elasticities
 
