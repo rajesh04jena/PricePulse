@@ -108,7 +108,8 @@ Step 1: Generate Synthetic Data For Testing Purposes
 - Designed to simulate real world proprietary data and retail business scenario
 - Generates synthetic data to simulate product lifecycle effect on demand, simulates historical marketing efforts, competitor price,item seasonality and item trend 
 ```python
-df = generate_dummy_data(
+from PricePulse.bayesian_model import *
+df = BayesianElasticityModel.generate_dummy_data(
     n_categories=3,
     n_brands_per_category=2,
     n_skus_per_brand=3,
@@ -120,7 +121,7 @@ df = generate_dummy_data(
 Step 2: Visualize Product Hierarchy
 ```python
 # Generate and display the chart
-chart = plot_hierarchical_chart(df)
+chart = BayesianElasticityModel.plot_hierarchical_chart(df)
 chart.render('product_hierarchy', format='png', cleanup=True)
 chart.render(filename='product_hierarchy', format='png', cleanup=True)
 chart
@@ -131,7 +132,7 @@ chart
 Step 3: Generate Self Price and Competitor Cross Price Elasticities
 
 ```python
-results = test_elasticity_model_outputs(df)
+results = BayesianElasticityModel.test_elasticity_model_outputs(df)
 self_elasticities = results['self_elasticities']
 cross_elasticities = results['cross_elasticities']
 ```
@@ -139,7 +140,7 @@ cross_elasticities = results['cross_elasticities']
 Step 4: Visualize Price-Demand Relationships across a hierarchical product structure and product lifecycle ( New Product Introduction (NPI), Mature, and End-of-Life (EOL) stages )
 
 ```python
-visualize_demand_projections(results['price_demand_curves'], level='brand', item_id=0)
+BayesianElasticityModel.visualize_demand_projections(results['price_demand_curves'], level='brand', item_id=0)
 ```
 ![alt text](C3A5F0BF-B6D3-481D-9A0C-938EAE63C95F.jpeg)
 
