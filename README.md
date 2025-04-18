@@ -113,13 +113,18 @@ Step 1: Generate Synthetic Data For Testing Purposes
 
 ```python
 from PricePulse.bayesian_model import *
-df = BayesianElasticityModel.generate_dummy_data(
+
+df = BayesianElasticityModel.generate_dynamic_dummy_data(
     n_categories=3,
     n_brands_per_category=2,
     n_skus_per_brand=3,
     start_date="2023-01-01",
-    end_date="2024-12-31"
+    end_date="2024-12-31",
+    lifecycle_stages=["npi", "mature", "eol"],
+    lead_time_days=10,
+    seed=42
 )
+
 ```
 
 Step 2: Visualize Product Hierarchy
