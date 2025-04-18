@@ -107,6 +107,10 @@ If you have any questions or need assistance with the installation, feel free to
 Step 1: Generate Synthetic Data For Testing Purposes
 - Designed to simulate real world proprietary data and retail business scenario
 - Generates synthetic data to simulate product lifecycle effect on demand, simulates historical marketing efforts, competitor price,item seasonality and item trend 
+- Added sku cost dummy data based on lifecycle decay,seasonal supplier deals and Holiday/Event-Driven cost correction
+- Added max inventory dummy data based on lead time compensation and pre-event stocking
+- Both sku cost and inventory data will used as constraints in the optimization engine
+
 ```python
 from PricePulse.bayesian_model import *
 df = BayesianElasticityModel.generate_dummy_data(
